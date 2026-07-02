@@ -3,9 +3,9 @@ from twilio.http.http_client import TwilioHttpClient
 from requests import *
 from twilio.rest import Client
 
-api_key = os.environ.get("api_key")
-api_t = os.environ.get("api_t")
-api_pas = os.environ.get("api_pass")
+api_key = os.environ.get("OWM_API_KEY")
+api_t = os.environ.get("TWILIO_ACCOUNT_SID")
+api_pas = os.environ.get("TWILIO_AUTH_TOKEN")
 
 parameters = {
         "lat" : 13.113587,
