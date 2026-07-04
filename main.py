@@ -27,7 +27,9 @@ for item in weather_data["list"]:
         will_rain = True
 if will_rain:
     proxy_client = TwilioHttpClient()
-    proxy_client.session.proxies = {'https': os.environ['https_proxy']}
+    https_proxy = os.environ.get('https_proxy')
+    if https_proxy:
+        proxy_client.session.proxies = {'https': https_proxy}
     client = Client(api_t, api_pas, http_client=proxy_client)
     message = client.messages.create(
         from_="whatsapp:+14155238886",
